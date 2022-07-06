@@ -15,27 +15,30 @@ programa {
     
     pesquisa_vetor( num)
     escreva(" \n")
+    ordena(vet,2, verdadeiro)
     exibir(qtd, vet)
    
 
-  }/*
-    funcao ordena(inteiro vet,inteiro qtd, logico teste)
+  }
+    funcao ordena(inteiro vet[],inteiro qtd, logico teste)
     {
         para(inteiro i= 0; i<= qtd; i++)
         {
             para(inteiro x = i+1; x <= qtd; x++)
             {
                 inteiro bkp
-                se()
+                se(vet[i]> vet[x])
                 {
-                
+                    bkp     = vet[i]
+                    vet[i]  = vet[x]
+                    vet[x]  = bkp
                 }
                 
             }
         }
-    }*/
+    }
 
-    funcao exibir(inteiro qtd, inteiro pos)
+    funcao exibir(inteiro qtd, inteiro pos[])
     {
         para(inteiro i=0; i<= qtd; i++)
         {
