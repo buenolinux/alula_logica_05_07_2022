@@ -1,6 +1,7 @@
 programa {
     inteiro vet[3]
-    inteiro num, pos, qtd = 2
+    inteiro num, pos, qtd = 2, teste_logico
+    
   funcao inicio() {
     // criar array e preencher
     para(inteiro i =0; i<3; i++)
@@ -12,12 +13,20 @@ programa {
     //entrar com valor a pesquisar
     escreva("Digite um número para pesquisa: ")
     leia(num)
+	escreva("Digite 1 para ordem crescente ou 0 decrescente: ")
+    leia(teste_logico)
     
     pesquisa_vetor( num)
     escreva(" \n")
-    ordena(vet,2, verdadeiro)
-    exibir(qtd, vet)
-   
+    se(teste_logico ==1)
+    {	
+    	ordena(vet,2, verdadeiro)
+    	exibir(qtd, vet)
+    }senao
+    {
+    	ordena(vet,2, falso)
+    	exibir(qtd, vet)
+    	}
 
   }
     funcao ordena(inteiro vet[],inteiro qtd, logico teste)
@@ -27,12 +36,25 @@ programa {
             para(inteiro x = i+1; x <= qtd; x++)
             {
                 inteiro bkp
-                se(vet[i]> vet[x])
+                se(teste == verdadeiro)
                 {
-                    bkp     = vet[i]
-                    vet[i]  = vet[x]
-                    vet[x]  = bkp
-                }
+               	 se(vet[i]> vet[x])
+                	{
+                    	bkp     = vet[i]
+                    	vet[i]  = vet[x]
+                    	vet[x]  = bkp
+                	} 	
+           	}
+           	senao
+           	{
+           		se(vet[i]< vet[x])
+                	{
+                    	bkp     = vet[i]
+                    	vet[i]  = vet[x]
+                   		 vet[x]  = bkp
+                	}	
+      		}
+               
                 
             }
         }
