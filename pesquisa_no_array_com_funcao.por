@@ -1,10 +1,10 @@
 programa {
-    inteiro vet[3]
-    inteiro num, pos, qtd = 2, teste_logico
+    inteiro vet[10]
+    inteiro num, pos, qtd = 9, teste_logico
     
   funcao inicio() {
     // criar array e preencher
-    para(inteiro i =0; i<3; i++)
+    para(inteiro i =0; i<qtd; i++)
     {
         escreva("Entre com um valor")
         leia(vet[i])
@@ -16,15 +16,15 @@ programa {
 	escreva("Digite 1 para ordem crescente ou 0 decrescente: ")
     leia(teste_logico)
     
-    pesquisa_vetor( num)
+    pesquisa_vetor( num,qtd)
     escreva(" \n")
     se(teste_logico ==1)
     {	
-    	ordena(vet,2, verdadeiro)
+    	ordena(vet,qtd, verdadeiro)
     	exibir(qtd, vet)
     }senao
     {
-    	ordena(vet,2, falso)
+    	ordena(vet,qtd, falso)
     	exibir(qtd, vet)
     	}
 
@@ -68,7 +68,7 @@ programa {
         }
     }
 
-  funcao pesquisa_vetor( inteiro num)
+  funcao pesquisa_vetor( inteiro num, inteiro qtd)
   {
     inteiro pos = 0
      enquanto(pos <2 e vet[pos] !=num)
